@@ -1,0 +1,23 @@
+# Python code to calculate the sailing time depending of speed over ground and true wind angle.
+
+twa = float ( input ( 'Enter TWA in degrees between 90 and 180: ' ) ) # Enter True Wind Angle in degrees
+
+sog = float ( input ( 'Enter SOG in knots: ' ) ) # Enter Speed Over Ground in knots
+
+dist = float (input ( 'Enter distance in nautical miles: ') ) # Enter distance in nautical miles
+
+import math
+
+twa_rad = ( twa / 360 ) * math.pi * 2 # Returning TWA in radians
+
+time = dist / ( sog * math.cos ( math.pi - twa_rad ) ) # Calculating time in hours
+
+time_hours = int ( time ) # Returning time in integer hours
+
+time_min = int ( 60 * ( time - time_hours ) ) # Returning minutes
+
+print ( 'Your time is' , str(time_hours) + ' ' +'hours'  , str(time_min) + ' '+ 'minutes')
+
+
+
+ 
